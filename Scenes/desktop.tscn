@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs6d5tt30tvln"]
+
+[ext_resource type="Script" path="res://Scripts/desktop.gd" id="1_kwp2o"]
+[ext_resource type="PackedScene" uid="uid://5usge6tk5o4y" path="res://Scenes/task_bar.tscn" id="1_scfxt"]
+[ext_resource type="PackedScene" uid="uid://u5t7dduiseom" path="res://Scenes/desktop_shortcut.tscn" id="2_a3gco"]
+[ext_resource type="Script" path="res://Scenes/running_applications.gd" id="4_4cbas"]
+
+[node name="Desktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwp2o")
+DESKTOP_SHORTCUT = ExtResource("2_a3gco")
+TASKBAR = ExtResource("1_scfxt")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.517647, 0.470588, 0.478431, 1)
+
+[node name="TaskBar" parent="." instance=ExtResource("1_scfxt")]
+layout_mode = 1
+
+[node name="Icons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Running Applications" type="Node" parent="."]
+script = ExtResource("4_4cbas")

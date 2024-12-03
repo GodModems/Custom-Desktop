@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://u5t7dduiseom"]
+
+[ext_resource type="Script" path="res://Scripts/desktop_shortcut.gd" id="1_ybtf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqip2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_85ogb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oov45"]
+bg_color = Color(0.741176, 0.741176, 0.741176, 0.411765)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Desktop Shortcut" type="Panel"]
+custom_minimum_size = Vector2(86, 128)
+offset_right = 86.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqip2")
+script = ExtResource("1_ybtf1")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 11.0
+offset_right = 32.0
+offset_bottom = 75.0
+grow_horizontal = 2
+texture = SubResource("PlaceholderTexture2D_85ogb")
+expand_mode = 1
+
+[node name="Application Name" type="Label" parent="."]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 86.0
+offset_bottom = 128.0
+text = "Test"
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Highlight" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oov45")
